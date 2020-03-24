@@ -24,30 +24,42 @@ public class ListCityAdapter extends RecyclerView.Adapter<ListCityAdapter.ViewHo
     private Context mContext;
     private ArrayList<City> cities = new ArrayList<>();
 
+    /**
+     * Constructor
+     * @param context
+     */
     ListCityAdapter(Context context) {
         this.mContext = context;
     }
 
-    public void setListCity(ArrayList<City> cities){
+    /**
+     * First time set data for adapter
+     * @param cities
+     */
+    void setListCity(ArrayList<City> cities){
         this.cities.clear();
         if(cities != null){
             this.cities = cities;
         }
     }
 
-    public void addItemsToListCity(ArrayList<City> cities){
+    /**
+     * add more data for adapter
+     * @param cities
+     */
+    void addItemsToListCity(ArrayList<City> cities){
         if(cities != null){
             this.cities.addAll(cities);
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvCountry;
         TextView tvCity;
         TextView tvPopulation;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
 
             tvCountry = view.findViewById(R.id.country_tv);
@@ -69,7 +81,7 @@ public class ListCityAdapter extends RecyclerView.Adapter<ListCityAdapter.ViewHo
         if (city != null){
             holder.tvCountry.setText(city.getCountry());
             holder.tvCity.setText(city.getCity());
-            holder.tvPopulation.setText(Utils.numberFormater(city.getPopulation()));
+            holder.tvPopulation.setText(Utils.numberFormatter(city.getPopulation()));
         }
     }
 

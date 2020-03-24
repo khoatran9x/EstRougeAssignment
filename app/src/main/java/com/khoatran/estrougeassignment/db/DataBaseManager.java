@@ -16,10 +16,15 @@ public class DataBaseManager extends SQLiteAssetHelper {
     private static final String TABLE_NAME = "CITIES";
     private static final int DATABASE_VERSION = 1;
 
+    /**
+     * Constructor
+     * @param context
+     */
     public DataBaseManager(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    /* get total number of records */
     public int getCount(){
         int count = 0;
         SQLiteDatabase db = this.getReadableDatabase();

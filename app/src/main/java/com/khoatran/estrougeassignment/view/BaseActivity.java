@@ -73,7 +73,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
 
     protected abstract int getLayoutResourceId();
 
-    // Hide the keyboard when touch outside
+    /** Hide the keyboard when touch outside */
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {

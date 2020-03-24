@@ -22,13 +22,18 @@ public class CityModel implements ICityModel {
         mDB = new DataBaseManager((Context) iMainActivityView).getWritableDatabase();
     }
 
-    private City initCityFromCursor(Cursor c) {
+    /**
+     * Init city object from cursor
+     * @param cursor
+     * @return city
+     */
+    private City initCityFromCursor(Cursor cursor) {
 
         City city = new City();
-        city.setId(c.getString(c.getColumnIndexOrThrow("id")));
-        city.setCountry(c.getString(c.getColumnIndexOrThrow("country")));
-        city.setCity(c.getString(c.getColumnIndexOrThrow("city")));
-        city.setPopulation(c.getInt(c.getColumnIndexOrThrow("population")));
+        city.setId(cursor.getString(cursor.getColumnIndexOrThrow("id")));
+        city.setCountry(cursor.getString(cursor.getColumnIndexOrThrow("country")));
+        city.setCity(cursor.getString(cursor.getColumnIndexOrThrow("city")));
+        city.setPopulation(cursor.getInt(cursor.getColumnIndexOrThrow("population")));
 
         return city;
     }
@@ -51,7 +56,6 @@ public class CityModel implements ICityModel {
             }
         } catch (Exception e) {
             Log.e("getAllCity", Objects.requireNonNull(e.getMessage()));
-
         } finally {
             if (cursor != null) {
                 cursor.close();
@@ -78,7 +82,6 @@ public class CityModel implements ICityModel {
             }
         } catch (Exception e) {
             Log.e("Get city with paging ", Objects.requireNonNull(e.getMessage()));
-
         } finally {
             if (cursor != null) {
                 cursor.close();
