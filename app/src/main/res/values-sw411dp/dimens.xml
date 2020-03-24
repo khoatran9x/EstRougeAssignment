@@ -3,6 +3,7 @@
 	<dimen name="city_layer_height">45.67dp</dimen>
 	<dimen name="country_layer_height">45.67dp</dimen>
 	<dimen name="text_common_padding">6.85dp</dimen>
+	<dimen name="title_padding_size">13.70dp</dimen>
 	<dimen name="city_text_size">20.55sp</dimen>
 	<dimen name="country_text_size">18.27sp</dimen>
 	<dimen name="popular_textsize">38.82sp</dimen>

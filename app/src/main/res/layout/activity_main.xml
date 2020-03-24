@@ -13,7 +13,7 @@
         android:background="@color/colorMainTopTitile"
         android:text="@string/title_main"
         android:textSize="@dimen/title_text_size"
-        android:padding="12dp"
+        android:padding="@dimen/title_padding_size"
         android:textColor="@color/colorWhite"
         android:textStyle="bold"/>
 
